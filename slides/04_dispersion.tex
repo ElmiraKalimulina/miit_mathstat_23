@@ -1,0 +1,178 @@
+% Le titre de la partie
+\section{Дисперсия случайной величины}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Première diapo avec un exemple de tableau
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Дисперсия случайной величины}
+\framesubtitle{Определение}
+\theoremstyle{definition}
+\begin{definition}{Дисперсией}
+ величины $\xi$ (обозначается $D \xi$) называется величина
+    $D\xi = E (\xi - E \xi)^2$
+\end{definition}
+\pause
+\begin{definition}{}
+Величина $\sigma = + \sqrt{ D\xi}$ называется стандартным отклонением значений
+случайной величины $\xi$ от ее среднего значения $E\xi$.
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\frametitle{Дисперсия случайной величины}
+\framesubtitle{Свойства}
+Поскольку
+\begin{equation*}
+    E(\xi - E\xi)^2 = E(\xi^2 - 2 \xi E\xi + (E \xi)^2 ) = \pause
+    E\xi^2 - (E\xi) ^2 ,
+\end{equation*}
+\pause
+то
+\begin{equation*}
+    \boxed{D \xi= E\xi^2 - (E\xi) ^2}.
+\end{equation*}
+\pause
+\begin{equation*}
+    \boxed{D \xi \geq 0}~~~\text{(из определения).}
+\end{equation*}
+\pause
+\begin{equation*}
+    \boxed{D (a+b\xi) =b^2 D\xi  }~~~\text{(из определения), где $a$, $b$ -  постоянные.}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ковариация случайных величин}
+\framesubtitle{Определение}
+Пусть $\xi$ и $\eta$ - две случайные величины. Тогда
+\pause
+\begin{eqnarray*}
+    D(\xi + \eta) = E( \xi + \eta - E (\xi +  \eta ))^2 = 
+    E( ( \xi - E \xi) + (\eta -  E \eta ) )^2 = \\
+    = D  \xi + D \eta + 2
+    \underbrace{
+    E( \xi - E \xi)( \eta - E \eta)}_{ \pause cov (\xi, \eta) }.
+\end{eqnarray*}
+Величина $cov (\xi, \eta)$ называется ковариацией случайных величин $\xi$ и $\eta$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Корреляция случайных величин}
+\framesubtitle{Определение, свойства.}
+Если $\xi > 0$ и $\eta > 0 $, то величина
+\pause
+\begin{eqnarray*}
+    \rho(\xi, \eta) = \frac{cov (\xi, \eta)}{\sqrt{\xi} \sqrt{\eta}}
+\end{eqnarray*}
+называется коэффициентом корреляции случайных величин $\xi$ и $\eta$.
+\\
+\\
+\pause
+Если $\rho(\xi, \eta) = \pm 1$, то 
+$\eta = a \xi + b$, $(\xi, \eta)$ (линейно зависимы),
+где $a > 0$, если $ \rho(\xi, \eta) = +1$, и $a < 0$, если $\rho(\xi, \eta) = -1$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Дисперсия}
+\framesubtitle{Определение, свойства, ...}
+Если $\xi$ и $\eta$ независимы, то независимы $\xi-E\xi$ и $\eta-E\eta$,  и по свойству 5) м. о.
+\begin{eqnarray*}
+cov(\xi, \eta) = E(\xi - E\xi) · E(\eta - E\eta) = 0.
+\end{eqnarray*}
+С учетом введенного обозначения для ковариации находим, что
+\pause
+\begin{eqnarray}\label{sum_of_dispers_0}
+\boxed{
+    D(\xi + \eta) = D(\xi) + D (\eta) + 2 cov (\xi , \eta).
+    }
+\end{eqnarray}
+Если $\xi$ и $\eta$ независимы, то дисперсия суммы $\xi+\eta$ равна сумме дисперсий:
+\begin{eqnarray}\label{sum_of_dispers}
+\boxed{
+D(\xi+\eta)=D\xi+ D\eta.
+}
+\end{eqnarray}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Дисперсия}
+\framesubtitle{Определение, свойства, ...}
+Cвойство (\ref{sum_of_dispers}) остается выполненным и при меньшем предположении, нежели независимость $\xi$ и $\eta$: достаточно, чтобы величины $\xi$ и $\eta$ были некоррелированы, т. е. $cov(\xi , \eta) = 0$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Дисперсия}
+\framesubtitle{Определение, свойства, ...}
+\textbf{}{Замечание.}
+Из некоррелированности $\xi$ и  $\eta$ вообще говоря, не следует их независимость.
+\\
+\\
+\textbf{Пример}:  пусть случайная величина $\alpha$ принимает значения $0$, $\frac{\pi}{2}$ и $\pi$ с вероятностями $\frac{1}{3}$. Тогда $\xi=\sin \alpha$ и $\eta =\cos \alpha$
+некоррелированы; в то же время они не только не независимы относительно вероятности $P$:
+\begin{eqnarray*}
+P(\eta =1, \xi=1) = 0 \neq  1/9 = P(\eta =1) P(\xi=1)
+\end{eqnarray*}
+Более того, $\xi$ и  $\eta$ - функционально зависимы: 
+\begin{eqnarray*}
+\eta ^ 2 + \xi ^ 2 = 1.
+\end{eqnarray*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Дисперсия}
+\framesubtitle{Определение, свойства, ...}
+\textbf{}{Замечание.}
+Из некоррелированности $\xi$ и  $\eta$ вообще говоря, не следует их независимость.
+\\
+\\
+\textbf{Пример}:  пусть случайная величина $\alpha$ принимает значения $0$, $\frac{\pi}{2}$ и $\pi$ с вероятностями $\frac{1}{3}$. Тогда $\xi=\sin \alpha$ и $\eta =\cos \alpha$
+некоррелированы; в то же время они не только не независимы относительно вероятности $P$:
+\begin{eqnarray*}
+P(\eta =1, \xi=1) = 0 \neq  1/9 = P(\eta =1) P(\xi=1)
+\end{eqnarray*}
+Более того, $\xi$ и  $\eta$ - функционально зависимы: 
+\begin{eqnarray*}
+\eta ^ 2 + \xi ^ 2 = 1.
+\end{eqnarray*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Дисперсия}
+\framesubtitle{Определение, свойства, ...}
+Свойства (\ref{sum_of_dispers_0}) и (\ref{sum_of_dispers}) для $\xi_1, \cdots, \xi_n$:
+\begin{eqnarray}
+\boxed{
+    D(\xi_1 + \dots + \xi_n) = D(\xi_1) + \dots + D (\xi_n) + 2 \sum_{i>j} cov (\xi_i , \xi_j).
+    }
+\end{eqnarray}
+\pause
+Если $\xi_1, \dots, \xi_n$ попарно независимы (попарно некоррелированы):
+\begin{eqnarray}\label{sum_of_dispers}
+\boxed{
+D \left(\sum_{i=1}^n  \xi_i \right)= \sum_{i=1}^n D\xi_i.
+}
+\end{eqnarray}
+\end{frame}
+
+\begin{frame}
+\frametitle{Дисперсия}
+\framesubtitle{Определение, свойства, ...}
+Свойства (\ref{sum_of_dispers_0}) и (\ref{sum_of_dispers}) для $\xi_1, \cdots, \xi_n$:
+\begin{eqnarray}
+\boxed{
+    D(\xi_1 + \dots + \xi_n) = D(\xi_1) + \dots + D (\xi_n) + 2 \sum_{i>j} cov (\xi_i , \xi_j).
+    }
+\end{eqnarray}
+\pause
+Если $\xi_1, \dots, \xi_n$ попарно независимы (попарно некоррелированы):
+\begin{eqnarray}\label{sum_of_dispers}
+\boxed{
+D \left(\sum_{i=1}^n  \xi_i \right)= \sum_{i=1}^n D\xi_i.
+}
+\end{eqnarray}
+\end{frame}
+
+

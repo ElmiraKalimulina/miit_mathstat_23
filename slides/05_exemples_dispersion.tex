@@ -1,0 +1,54 @@
+\begin{frame}
+\frametitle{Примеры}
+\framesubtitle{}
+
+\begin{itemize}
+	\item	<1-> $\xi$ - бернуллиевская сл.в., принимающая два значения $1$ и $0$ с вероятностями $p$ и $q$:
+	<2->
+	\begin{equation*}
+	   D\xi= E(\xi - E\xi)^2=E(\xi - p)^2=(1-p)^2p+p^2q=pq.
+	\end{equation*}
+	\item   <3-> $\Rightarrow$ если $\xi_1, ..., \xi_n$ - н.о.р берн. сл.в., $S_n=\xi_1 +...+\xi_n$, то 
+$DS_n=npq$.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Пример}
+\framesubtitle{Оптимальное линейное оценивание}
+
+\begin{itemize}
+	\item $\xi$ и $\eta$, наблюдается лишь сл.в. $\xi$, предполагается, что $\xi$ и $\eta$ - коррелированы. \pause $f=f(\xi)$ от $\xi$ называется \textit{оценкой} для $\eta$. \pause $f^*=f^*(\xi)$ от $\xi$  -  \textit{оптимальная в среднеквадратическом смысле оценка} для $\eta$, если:
+		\begin{equation*}
+	   E(\eta - f^*(\xi))^2= \inf_f E(\eta - f(\xi))^2.
+	\end{equation*}
+	\pause
+	Найдём оптимальную оценку в классе линейных оценок
+$\lambda(\xi) = a + b \xi$: $\Rightarrow (*)$
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Пример}
+\framesubtitle{Оптимальное линейное оценивание}
+$(*)$
+\pause $g(a,b)=M(\eta - (a + b\xi))^2,$
+\begin{eqnarray*}
+\pause \frac{\partial g(a,b)}{\partial a}=-2M(\eta - (a + b\xi)),
+\\
+\pause \frac{\partial g(a,b)}{\partial b}=-2M \left[ (\eta - (a + b\xi))\xi \right],
+\end{eqnarray*}
+$\Rightarrow$ \pause
+   \boxed{
+   $$\lambda^*(\xi) = E \eta + \frac{cov (\xi, \eta)}{D \eta} (\xi - E\xi)$$%.
+}
+\pause
+\\
+Cреднеквадратическая ошибка оценивания равна:
+   \boxed{
+   $$\Delta^*=E( \eta -\lambda^*(\xi))^2 = D \eta( 1 - \rho^2 (\xi , \eta)$$%.
+}
+\end{frame}

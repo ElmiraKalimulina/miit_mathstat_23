@@ -1,0 +1,61 @@
+% On découpe ce document complexe en plusieurs sous-fichiers séparés.
+% Cela permettra notamment de réarranger les transparents facilement 
+% lors de l'élaboration du document.
+
+% La définition de la classe beamer avec tous les styles afférents
+
+\RequirePackage{currfile} 
+
+\documentclass{beamer}
+%\documentclass{article}
+
+\input{preambule/special_beamer.tex}
+
+% Les autres packages utiles  notamment pour le français, les accents ou Python
+\input{preambule/autres_packages.tex}
+% Les macros et raccourcis personnels
+\input{preambule/macros.tex}
+
+% On définit le titre et l'auteur du document
+
+% L'argument optionnel (entre crochets) donne le titre qui sera mis sur chaque slide
+\title[ТВ и МС]{
+\textbf{Лекции 2,~3}.  
+\\
+Эмпирическая функция распределения.
+Функция риска.
+}
+\author{Лектор: Э.Ю. \textsc{Калимулина}} % Votre nom
+% L'épreuve (car on n'a pas le droit de signaler sa provenance à un concours) (là encore, l'argument optionnel apparaît sur chaque slide)
+\institute[TIPE]{Осенний семестр, 2022}
+\date{курс \textsc{ТВ и МС}} 
+
+% On démarre le document proprement dit
+\begin{document}
+
+% La page de titre et la table des matières
+\input{slides/00_title_plan.tex}
+
+% La première grande partie: introduction du sujet
+\input{slides/01_bernoulli1_LLN1.tex}
+
+% La 2e partie: Le point de vue de la relativité restreinte
+%\input{slides/02_distribution.tex}
+
+% La 3e partie: Le point de vue de la relativité générale
+%\input{slides/03_math_expect.tex}
+
+% Conclusion
+%\input{slides/04_dispersion.tex}
+
+% Les slides d'exemples 
+% (à commenter si bien sûr vous n'en voulez pas... 
+% ils sont juste là pour servir d'exemples de base)
+%\section{Примеры}
+%\input{slides/05_exemples_dispersion.tex}
+%\input{slides/exemples_figure.tex}
+%\input{slides/exemples_equation.tex}
+
+\end{document}
+
+
